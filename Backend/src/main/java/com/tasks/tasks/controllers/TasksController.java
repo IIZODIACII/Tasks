@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tasks.tasks.models.Task;
+import com.tasks.tasks.models.User;
 import com.tasks.tasks.models.UserTasks;
 import com.tasks.tasks.services.TasksService;
 
@@ -30,7 +31,7 @@ public class TasksController {
     }
 
     @GetMapping("/tasks/user_tasks")
-    public UserTasks getMethodName(@PathParam("userId") Integer userId) {
+    public User getMethodName(@PathParam("userId") Integer userId) {
         return tasksService.getUserTasks(userId);
     }
 
