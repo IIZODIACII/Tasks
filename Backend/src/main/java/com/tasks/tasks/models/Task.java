@@ -1,5 +1,7 @@
 package com.tasks.tasks.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -20,7 +22,9 @@ public class Task {
     private String description;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonBackReference
     private User user;
+    private Long date;
 
     public Task() {
     }
@@ -55,6 +59,14 @@ public class Task {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Long getDate() {
+        return date;
+    }
+
+    public void setDate(Long date) {
+        this.date = date;
     }
 
 }

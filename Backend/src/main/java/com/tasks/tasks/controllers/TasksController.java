@@ -7,16 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tasks.tasks.models.Task;
 import com.tasks.tasks.models.User;
-import com.tasks.tasks.models.UserTasks;
 import com.tasks.tasks.services.TasksService;
 
 import jakarta.websocket.server.PathParam;
 
 @RestController
+@RequestMapping("/api/tasks")
 public class TasksController {
 
     TasksService tasksService;
@@ -25,28 +26,28 @@ public class TasksController {
         this.tasksService = tasksService;
     }
 
-    @GetMapping("/tasks")
+    @GetMapping("")
     public List<Task> getAllTasks() {
         return tasksService.getTasks();
     }
 
-    @GetMapping("/tasks/user_tasks")
+    @GetMapping("/user_tasks")
     public User getMethodName(@PathParam("userId") Integer userId) {
         return tasksService.getUserTasks(userId);
     }
 
-    @PostMapping("/tasks/add_task")
+    @PostMapping("/add_task")
     public void createTask(@RequestBody Task task) {
         tasksService.createNewTask(task);
 
     }
 
-    @PutMapping("/tasks/update_task")
+    @PutMapping("/update_task")
     public void updateTask(@RequestBody Task task) {
         tasksService.updateTask(task);
     }
 
-    @DeleteMapping("/tasks/delete_task")
+    @DeleteMapping("/delete_task")
     public void deleteTask(@RequestBody Task task) {
         tasksService.deleteTask(task);
     }
