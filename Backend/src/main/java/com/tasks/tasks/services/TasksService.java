@@ -20,7 +20,7 @@ public class TasksService {
         this.tasksRepo = tasksRepo;
     }
 
-    public List<Task> getTasks() {
+    public List<Task> getAllTasks() {
         return tasksRepo.findAll();
     }
 

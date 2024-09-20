@@ -30,7 +30,7 @@ public class TasksController {
 
     @GetMapping("")
     public List<Task> getAllTasks() {
-        return tasksService.getTasks();
+        return tasksService.getAllTasks();
     }
 
     @GetMapping("/user_tasks")
