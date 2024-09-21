@@ -1,4 +1,4 @@
-package com.tasks.tasks.controllers;
+package com.tasks.controllers;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tasks.tasks.models.Task;
-import com.tasks.tasks.models.User;
-import com.tasks.tasks.services.TasksService;
+import com.tasks.models.Task;
+import com.tasks.models.User;
+import com.tasks.services.TasksService;
 
 import jakarta.websocket.server.PathParam;
 

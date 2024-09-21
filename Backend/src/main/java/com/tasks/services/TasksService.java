@@ -1,13 +1,12 @@
-package com.tasks.tasks.services;
+package com.tasks.services;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.tasks.tasks.models.Task;
-import com.tasks.tasks.models.User;
-import com.tasks.tasks.models.UserTasks;
-import com.tasks.tasks.repositories.TasksRepo;
+import com.tasks.models.Task;
+import com.tasks.models.User;
+import com.tasks.repositories.TasksRepo;
 
 @Service
 public class TasksService {

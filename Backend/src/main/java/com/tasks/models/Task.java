@@ -1,4 +1,4 @@
-package com.tasks.tasks.models;
+package com.tasks.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 

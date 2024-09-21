@@ -1,4 +1,4 @@
-package com.tasks.tasks.controllers;
+package com.tasks.controllers;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tasks.tasks.models.User;
-import com.tasks.tasks.services.UserService;
+import com.tasks.models.User;
+import com.tasks.services.UserService;
 
 @RestController
 @RequestMapping("/api/users")
@@ -30,6 +30,11 @@ public class UsersController {
     public void createUser(@RequestBody User user) {
         userService.createNewUser(user);
 
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestBody User user) {
+        return userService.login(user);
     }
 
     @PutMapping("/update_user")
